@@ -9,7 +9,7 @@ export default function Home() {
         <link rel="icon" href="/img/favicon.ico" />
       </Head>*/}
 
-      <MetaData title={"Home"} description={"Acceuil"}/>
+      <MetaData title={"Home"} description={"Acceuil"} />
 
       <main className="main">
         wedo

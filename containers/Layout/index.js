@@ -16,6 +16,7 @@ import NavBar from "../../components/nav";
 import { BsBuilding, BsCamera } from "react-icons/bs"
 import { GiBedLamp } from "react-icons/gi"
 import { FaCouch } from "react-icons/fa"
+import MetaData from "../../components/Helmetcomponent"
 
 const ContainerStyle=styled(Container)`
     max-width:100% !important;
@@ -136,6 +137,7 @@ const ContainerStyle=styled(Container)`
 const Layout = ({ children, ...props }) => {
   return (
     <Contner className='contner'>
+      <MetaData title={"Home"} description={"Acceuil"} />
     <NavBar/>
   <ContainerStyle>
     <Row >
