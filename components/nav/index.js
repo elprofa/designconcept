@@ -56,9 +56,9 @@ const NavBar = (props) => {
                       
                       
                     </Nav>
-                    <NavLink className='mx-1'>Acceuil</NavLink><br/>
-                    <NavLink className='mx-1'>Catalogue</NavLink><br/>
-                    <NavLink className='mx-1'>Contact</NavLink>
+                    <NavLink className='mx-1 navlink'>Acceuil</NavLink><br/>
+                    <NavLink className='mx-1 navlink'>Catalogue</NavLink><br/>
+                    <NavLink className='mx-1 navlink'>Contact</NavLink>
                   </Collapse>
                 </Navbar>
                 </nav>

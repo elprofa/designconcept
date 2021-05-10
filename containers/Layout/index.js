@@ -8,7 +8,6 @@ import { GlobalCSS } from "../../public/styles/style";
 // import Footer from "../../components/molecule/Footer";
 import { Container, Row, Col } from "reactstrap"
 import styled from "styled-components"; 
-import { AiOutlineHome } from "react-icons/ai";
 import { useState } from "react"
 import Image from 'next/image';
 import ModalDetail from "../../components/ModalDetail";

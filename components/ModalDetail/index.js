@@ -3,6 +3,7 @@ import {Modal,Button} from 'react-bootstrap'
 import ModalDetailStc from './ModalDetail.stc'
 import Image from "next/image"
 import {Col,Row} from 'reactstrap'
+
 const ModalDetail=(props)=>{
 
     const [show, setShow] = useState(false);
