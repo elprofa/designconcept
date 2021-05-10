@@ -14,6 +14,7 @@ const ModalDetail=(props)=>{
         <ModalDetailStc>
         <span onClick={handleShow}>
             {props.texte}
+            {props.icons}
         </span>
         
         <Modal
@@ -34,10 +35,11 @@ const ModalDetail=(props)=>{
                         <br/><br/>
                         <Row>
                             <Col md={3}>
-                            <Image src="/img/lamp.png" layout="fill" />
+                            {/*<Image src="/img/gallery-1.png" layout="fill" />*/}
+                            <img src="/img/LogoDesignKoncep.png" alt="Logo" />
                             </Col>
                             <Col md={3}>
-                                <Image src="/img/lamp.png" layout="fill" />
+                                <Image src="/img/gallery-1.jpg" layout="fill" />
                             </Col>
                             <Col md={3}>
                             <Image src="/img/lamp.png" layout="fill" />
