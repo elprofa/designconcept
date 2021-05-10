@@ -48,37 +48,17 @@ const NavBar = (props) => {
                     style={{ marginBottom: `1.45rem`,
                             cursor: `pointer` }}
                   /> */}
-                  </NavbarBrand>
+                  <img src="/img/LogoDesignKoncep.png" alt="Logo" />                  </NavbarBrand>
                   <NavbarToggler onClick={toggle} />
                   <Collapse isOpen={isOpen} navbar>
                     <Nav className="mr-auto" navbar>
-                      <NavItem>
-                        <NavLink href="/components/">Components</NavLink>
-                      </NavItem>
-                      <NavItem>
-                        <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
-                      </NavItem>
-                      <UncontrolledDropdown nav inNavbar>
-                        <DropdownToggle nav caret>
-                          Options
-                        </DropdownToggle>
-                        <DropdownMenu right>
-                          <DropdownItem>
-                            Option 1
-                          </DropdownItem>
-                          <DropdownItem>
-                            Option 2
-                          </DropdownItem>
-                          <DropdownItem divider />
-                          <DropdownItem>
-                            Reset
-                          </DropdownItem>
-                        </DropdownMenu>
-                      </UncontrolledDropdown>
+                      
+                      
+                      
                     </Nav>
-                    <NavbarText className='mx-1'>Acceuil</NavbarText><br/>
-                    <NavbarText className='mx-1'>Catalogue</NavbarText><br/>
-                    <NavbarText className='mx-1'>Contact</NavbarText>
+                    <NavLink className='mx-1 navlink'>Acceuil</NavLink><br/>
+                    <NavLink className='mx-1 navlink'>Catalogue</NavLink><br/>
+                    <NavLink className='mx-1 navlink'>Contact</NavLink>
                   </Collapse>
                 </Navbar>
                 </nav>

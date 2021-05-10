@@ -37,5 +37,29 @@ import styled from "styled-components";
         background: none !important;
         transition: 1s;
     }
+    .navlink{
+        color: #42210b;
+        text-transform: uppercase;
+        font-family: 'Verdana', 
+                    'Arial Narrow', 
+                    Arial, sans-serif;
+        font-weight: 800px;
+    }
+    .navlink:hover {
+        color: orange;
+        transition: .4s;
+    }
+    .navlink::after{
+        content:'';
+        display: block;
+        width: 0;
+        height: 2px;
+        background: red;
+        transition: width .4s;
+    }
+    .navlink:hover::after {
+        width: 100%;
+        transition: width .8s;
+    }
 `;
 export default NavBarStc;

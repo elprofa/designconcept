@@ -8,12 +8,15 @@ import { GlobalCSS } from "../../public/styles/style";
 // import Footer from "../../components/molecule/Footer";
 import { Container, Row, Col } from "reactstrap"
 import styled from "styled-components"; 
-import { AiOutlineHome } from "react-icons/ai";
 import { useState } from "react"
 import Image from 'next/image';
 import ModalDetail from "../../components/ModalDetail";
 import nav from "../../components/nav";
 import NavBar from "../../components/nav";
+import { BsBuilding, BsCamera } from "react-icons/bs"
+import { GiBedLamp } from "react-icons/gi"
+import { FaCouch } from "react-icons/fa"
+import MetaData from "../../components/Helmetcomponent"
 
 const ContainerStyle=styled(Container)`
     max-width:100% !important;
@@ -134,39 +137,42 @@ const ContainerStyle=styled(Container)`
 const Layout = ({ children, ...props }) => {
   return (
     <Contner className='contner'>
+      <MetaData title={"Home"} description={"Acceuil"} />
     <NavBar/>
   <ContainerStyle>
     <Row >
       <Col className='ranger-un column'>
         <div className="appercu">
-        <Image src="/img/lamp.png" layout="fill" />
+        <Image src="/img/gallery-1.jpg" layout="fill" />
          
         </div>
-        <ModalDetail texte="HOME" />
+        <ModalDetail texte="HOME" icons={<BsBuilding size={50} className='mx-5'/>} />
       
       </Col>
 
       <Col className='ranger-deux column'>
       <div className="appercu">
-          <Image src="/img/lamp.png" layout="fill" />
+          <Image src="/img/gallery-2.jpg" layout="fill" />
          
         </div>
-        <ModalDetail texte="LAMP" />
+        <ModalDetail texte="LAMP" icons={<GiBedLamp size={50} className='mx-5'/>} />
       </Col>    
 
     <Col className='ranger-trois column' >
     <div className="appercu">
-        <Image src="/img/menage.png" layout="fill" />
+        <Image src="/img/gallery-3.jpg" layout="fill" />
           
         </div>
-        <ModalDetail texte="MENAGE" />
+        <ModalDetail texte="MENAGE" icons={<FaCouch size={50} className='mx-5'/>} />
     </Col>
 
     <Col className='ranger-quatre column'>
     <div className="appercu">
-        <Image src="/img/gadget.png" layout="fill" />
+        <Image src="/img/gallery-4.jpg" layout="fill" />
         </div>
-        <ModalDetail texte="GADGET" />
+        <ModalDetail texte="GADGET" icons={<BsCamera size={50} className='mx-5'/>} />
+        
+        
     {/* <StaticImage className= 'img' id= 'img'
       src="../images/gatsby-astronaut.png"
       width={300}
