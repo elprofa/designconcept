@@ -26,6 +26,7 @@ import NavBarStc from './nav.stc';
 import { button, nav} from "react-bootstrap"
 import PropTypes from "prop-types"
 import Link from "next/link"
+import Image from 'next/image'
 
 const NavBar = (props) => {
       const [isOpen, setIsOpen] = useState(false);
@@ -39,46 +40,16 @@ const NavBar = (props) => {
               <nav>
                 <Navbar className='navbar' light expand="md">
                   <NavbarBrand href="/" style={{paddingTop:"20px"}}>
-                  {/* <StaticImage className= 'img' id= 'img'
-                    src="../../images/logo.png"
-                    height={80}
-                    quality={95}
-                    formats={["AUTO", "WEBP", "AVIF"]}
-                    alt="A Gatsby astronaut"
-                    style={{ marginBottom: `1.45rem`,
-                            cursor: `pointer` }}
-                  /> */}
+                    <Image src="/img/logo.png" width="120" height="80px" />
                   </NavbarBrand>
                   <NavbarToggler onClick={toggle} />
                   <Collapse isOpen={isOpen} navbar>
-                    <Nav className="mr-auto" navbar>
-                      <NavItem>
-                        <NavLink href="/components/">Components</NavLink>
-                      </NavItem>
-                      <NavItem>
-                        <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
-                      </NavItem>
-                      <UncontrolledDropdown nav inNavbar>
-                        <DropdownToggle nav caret>
-                          Options
-                        </DropdownToggle>
-                        <DropdownMenu right>
-                          <DropdownItem>
-                            Option 1
-                          </DropdownItem>
-                          <DropdownItem>
-                            Option 2
-                          </DropdownItem>
-                          <DropdownItem divider />
-                          <DropdownItem>
-                            Reset
-                          </DropdownItem>
-                        </DropdownMenu>
-                      </UncontrolledDropdown>
+                  <Nav className="mr-auto" navbar>
+                      
                     </Nav>
-                    <NavbarText className='mx-1'>Acceuil</NavbarText><br/>
-                    <NavbarText className='mx-1'>Catalogue</NavbarText><br/>
-                    <NavbarText className='mx-1'>Contact</NavbarText>
+                    <NavbarText className='mx-1'><Link href='/'><a>Acceuil</a></Link></NavbarText><br/>
+                    <NavbarText className='mx-1'><Link href='/'><a>Catalogue</a></Link></NavbarText><br/>
+                    <NavbarText className='mx-1'><Link href='/'><a>Contact</a></Link></NavbarText>
                   </Collapse>
                 </Navbar>
                 </nav>
