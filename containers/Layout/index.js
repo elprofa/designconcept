@@ -143,7 +143,7 @@ const Layout = ({ children, ...props }) => {
     <Row >
       <Col className='ranger-un column'>
         <div className="appercu">
-        <Image src="/img/gallery-1.jpg" layout="fill" />
+        <Image src="/img/gallery-5.gif" layout="fill" />
          
         </div>
         <ModalDetail texte="HOME" icons={<BsBuilding size={50} className='mx-5'/>} />
@@ -152,7 +152,7 @@ const Layout = ({ children, ...props }) => {
 
       <Col className='ranger-deux column'>
       <div className="appercu">
-          <Image src="/img/gallery-2.jpg" layout="fill" />
+          <Image src="/img/gallery-1.jpg" layout="fill" />
          
         </div>
         <ModalDetail texte="LAMP" icons={<GiBedLamp size={50} className='mx-5'/>} />
