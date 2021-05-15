@@ -1,75 +1,43 @@
-import Styled from 'styled-components';
+import React, { useState } from 'react';
+import DetailStc from './Detail.stc'
+import Image from "next/image"
 import {Col,Row} from 'reactstrap'
-import Image from 'next/image'
-import { useState } from 'react';
-import { useEffect } from 'react';
 
-const SectionDetailStc=Styled.section`
- 
-     min-height:100vh;
-    background:#fff !important;
-    .imagaAppercu div {
-        width: 90%;
-        height: 411px;
-        margin: auto !important;
-        display: block !important;
-        position: relative !important;
-        @media (max-width: 476px)         
-          {
-            height: 280px;
-          }
-    }
-    .imagaAppercu1 div {
-        width: 80% !important;
-        height: 100px;
-        margin: auto !important;
-        cursor:pointer;
-        @media (max-width: 476px)         
-          {
-            display:none !important;
-          }
-    }
-`;
-export default function Detail({query}) {
+const Detail=(props)=>{
 
-    const [lien,setLien]=useState("/img/lamp.png")
-    const id=query?.id;
-
-  console.log(query)
-  return (
-    <SectionDetailStc className="sectionDetail" style={{padding:"80px"}}>
-        <Row>
-            <Col lg={6}>
+    return(
+    <DetailStc>
+        <Col lg={6}>
                 <div className="imagaAppercu">
-                    <Image src={lien} layout="fill" />
+                    <Image src={props.lien} layout="fill" />
                 </div>
             <br/>
             <br/>
             <Row>
                 <Col md={3}>
                     <div className="imagaAppercu1">
-                        <Image src={lien} layout="fill" />
+                        <Image src={props.lien} layout="fill" />
                     </div>
                 </Col>
                 <Col md={3}>
                     <div className="imagaAppercu1">
-                        <Image src={lien} layout="fill" />
+                        <Image src={props.lien} layout="fill" />
                     </div>
                 </Col>
                 <Col md={3}>
                     <div className="imagaAppercu1">
-                        <Image src={lien} layout="fill" />
+                        <Image src={props.lien} layout="fill" />
                     </div>
                 </Col>
                 <Col md={3}>
                     <div className="imagaAppercu1">
-                        <Image src={lien} layout="fill" />
+                        <Image src={props.lien} layout="fill" />
                     </div>
                 </Col>
             </Row>
         </Col>
         <Col lg={6}>
-            <h2 style={{fontSize: "25px"}}>yes</h2>
+            <h2 style={{fontSize: "25px"}}>{props.libelle}</h2>
             <Row style={{paddingBottom:"20px;"}}>
                 <Col sm={12} style={{padding: "15px",borderBottom: "1px solid #ccc"}}>
                 <span style={{fontWeight: "500",float: "left"}}> Prix total</span>
@@ -92,7 +60,7 @@ export default function Detail({query}) {
             dès qu'il est prêt ou que la mise en page est achevée. 
             </p>
         </Col>
-    </Row>
-    </SectionDetailStc>
-  )
+    </DetailStc>
+    )
 }
+export default Detail;

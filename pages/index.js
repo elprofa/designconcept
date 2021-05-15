@@ -4,6 +4,7 @@ import {Col,Row,Container} from 'reactstrap'
 import styled from 'styled-components'
 import Link from 'next/link'
 import { AiOutlineHome,AiOutlineBulb,AiOutlineClear,AiOutlineLaptop} from "react-icons/ai";
+import { useRef, useState } from 'react'
 
 const ContainerStyle=styled(Container)`
     max-width:100% !important;
@@ -12,57 +13,26 @@ const ContainerStyle=styled(Container)`
  const Contner = styled.div`
 
 
- .ranger-un
- {
-   background: #f7931e;
- }
- .ranger-un:hover
- {
-   transition: .9s;
-   width: 40%;
-   flex: 3;
- }
-
- .ranger-deux
+ .ranger-1
  {
    background: #42210b;
  }
- .ranger-deux:hover
+
+ .ranger-2
  {
-   transition: .9s;
-   flex: 3;
- }
-/* 
- .ranger-deux
- {
-   background: blue;
- } */
- .ranger-deux:hover
- {
-   transition: .9s;
-   flex: 3;
+   background: #f7931e;
  }
 
- .ranger-trois
+ .ranger-3
  {
    background: #c1272d;
  }
- .ranger-trois:hover
- {
-   transition: .9s;
-   flex: 3;
- }
 
- .ranger-quatre
+ .ranger-4
  {
    background: #f15a24;
  }
- .ranger-quatre:hover
- {
-   transition: .9s;
-   flex: 3;
- }
-
+ 
  .column {
     height: 100vh;
     .appercu
@@ -85,63 +55,6 @@ const ContainerStyle=styled(Container)`
     }
 }
 
-.column:hover 
-{
-  .appercu
-    {
-      display:block;
-      .productImage div {
-          height: 354px;
-          width: 454px;
-          margin: 30px auto !important;
-          @media (max-width: 476px)         
-          {
-            height: 40%!important;
-            width: 100%!important;
-          }
-      }
-      
-    }
-    span 
-    {
-      color:#000;
-      font-size:30px;
-      margin: auto;
-      position: relative;
-      top: 0px;
-      left: 45%;
-      transform: translate(-50%, -50%);
-      border: 1px solid #000;
-      padding: 10px;
-      cursor: pointer;
-      
-    }
-
-    .divButton {
-      position: relative;
-      margin-top: 60% !important;
-      text-align: center;
-      border: 20px solid #fff;
-      width: 150px;
-      margin: auto;
-      height: 120px;
-      padding-top: 0px;
-      @media (max-width: 476px)         
-      {
-        margin-top: 110% !important;
-      }
-      a {
-        color: #fff;
-        font-family: inherit;
-        font-weight: 900;
-        font-size: 20px;
-    }
-  }
-
- 
-     
-}
-
 .modal-dialog
 {
   width: 100% !important;
@@ -154,94 +67,171 @@ const ContainerStyle=styled(Container)`
     position: relative;
     margin-top: 70% !important;
     text-align: center;
-    border: 30px solid #fff;
+    border: 45px solid #fff;
     width: 215px;
     margin: auto;
-    height: 190px;
+    height: 210px;
     padding-top: 20px;
-    a {
-      color: #fff;
-      font-family: inherit;
-      font-weight: 900;
-      font-size: 30px;
+    cursor:pointer;
+    color: #fff;
+      font-family: system-ui;
+      font-weight: 500;
+      font-size: 25px;
+    
+}
+
+.mystyle
+{
+  flex:3;
+  .appercu
+    {
+      display:block;
+      .productImage div {
+        cursor:pointer;
+          max-width: 80% !important;
+          display: block;
+          margin: 0px auto !important;
+          height: 350px;
+          width: auto !important;
+          img{
+            visibility: inherit;
+            position: relative !important;
+            inset: 0px;
+            box-sizing: border-box;
+            padding: 0px;
+            border: none;
+            margin: auto;
+            display: block;
+            width: auto;
+            height: 350px important;
+            min-width: 0 important;
+            max-width: 100% important;
+            min-height: 0 important;
+            max-height: 100% important;
+          }
+      }
+    }
+
+  .divButton
+  {
+    width: 100px;
+    height: 100px;
+    border: 20px solid #fff;
+    padding: 0;
+    font-size: 12px;
+    padding-top: 10px;
   }
 }
 `;
 
 
 export default function Home() {
+
+  const clickColumn=(e)=>{
+  
+    var id=e.target.id;
+    console.log(id);
+    var priam =document.getElementById("column"+id);
+    var elements = document.getElementsByClassName('mystyle')
+    
+    console.log(priam)
+    console.log(elements)
+    
+    console.log(priam.id)
+    console.log(elements[0]?.id)
+
+    if(priam.id==elements[0]?.id){
+
+      priam.style.transition = ".9s";
+      priam.classList.toggle("mystyle");
+    }else
+    {
+        if(elements[0])
+        {
+          elements[0]?.classList.remove('mystyle')
+          
+        //  alert('yes');
+        }
+        else
+        {
+          elements[0]?.classList.remove('mystyle')
+          //  alert('no')
+        }
+        priam.style.transition = ".9s";
+        priam.classList.add('mystyle')
+      }
+      
+    console.log(priam.classList)
+
+      // console.log(e.target.classList);
+
+      console.log(priam.classList)
+  }
+
   return (
     <div className="App">
       <Head>
-        <title>dubani agency</title>
+        <title>DesignKoncept</title>
         <link rel="icon" href="/img/favicon.ico" />
       </Head>
 
       <Contner className='contner'>
         <ContainerStyle>
           <Row >
-            <Col  className='ranger-un column'>
+            <Col  className='ranger-1 column' id="column1">
               <div className="appercu">
                 <div className="productImage">
-                  <Image src="/img/maison.png" layout="fill" />
+                  <Link href="/detail/1">
+                    <Image src="/img/f1.png" layout="fill" />
+                  </Link>
                 </div>
                 
               </div>
-              <div className="divButton">
-                  <Link href="/detail/1">
-                    <a>
-                      <AiOutlineHome /> <br/>
+              <div className="divButton" id="1" onClick={clickColumn}>
+                  <AiOutlineHome /> <br/>
                       HOME
-                    </a>
-                  </Link>
                 </div>
             </Col>
 
-            <Col className='ranger-deux column'>
+            <Col className='ranger-2 column'  id="column2">
               <div className="appercu">
                 <div className="productImage">
+                <Link href="/detail/1">
                   <Image src="/img/lamp.png" layout="fill" />
+                  </Link>
                 </div>
               </div>
-              <div className="divButton">
-                  <Link href="/detail/2">
-                    <a>
-                    <AiOutlineBulb /> <br/>
+              <div className="divButton" id="2" onClick={clickColumn}>
+                      <AiOutlineBulb /> <br/>
                       LAMPE
-                    </a>
-                  </Link>
                 </div>
             </Col>    
 
-          <Col className='ranger-trois column' >
+          <Col className='ranger-3 column'  id="column3">
             <div className="appercu">
                 <div className="productImage">
-                  <Image src="/img/pele.png" layout="fill" />
+                <Link href="/detail/1">
+                  <Image src="/img/electro.png" layout="fill" />
+                  </Link>
                 </div>
               </div>
-              <div className="divButton">
-                  <Link href="/detail/3">
-                    <a>
+              <div className="divButton" id="3" onClick={clickColumn}>
                       <AiOutlineClear /> <br/>
                       MENAGE
-                    </a>
-                  </Link>
                 </div>
           </Col>
 
-          <Col className='ranger-quatre column'>
+          <Col className='ranger-4 column'  id="column4">
             <div className="appercu">
               <div className="productImage">
-                <Image src="/img/cle.png" layout="fill" />
+              <Link href="/detail/1">
+                <Image src="/img/ecouteur.png" layout="fill" />
+                </Link>
               </div>
             </div>
-            <div className="divButton">
-              <Link href="/detail/4">
-                <a>
+            <div className="divButton" id="4" onClick={clickColumn}>
                   <AiOutlineLaptop /> <br/>
                   GADGET
-                </a>
-              </Link>
             </div>
           </Col>
       </Row>

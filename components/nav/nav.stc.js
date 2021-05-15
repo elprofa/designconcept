@@ -14,12 +14,14 @@ import styled from "styled-components";
         border-bottom:1px solid #f3f3f3;
         border-bottom: 1px solid #f3f3f3;
         background: #fff;
-        height: 120px;
+        height: 175px;
     }
     .afterHeader h1
     {
+        font-size: 4.5rem;
         color: #fff;
         font-weight: 100;
+        font-family: system-ui;
         span
         {
             font-weight:600;
@@ -33,8 +35,9 @@ import styled from "styled-components";
     }
     .sectionHeader1
     {
-        padding: 20px;
+        padding: 0px 20px;
         background: #000;
+        padding-bottom: 15px;
     }
     .navbar
     {
@@ -43,7 +46,7 @@ import styled from "styled-components";
         font-family: 'Franklin Gothic Medium', 
                     'Arial Narrow', 
                     Arial, sans-serif;
-        font-size: 16px;
+        font-size: 18px;
         border-radius: 10px;
     }
     .navbar:hover
@@ -55,8 +58,8 @@ import styled from "styled-components";
      a 
     {
         text-transform:uppercase !important;
-        font-family: -webkit-pictograph;
-        font-weight: 700;
+        font-family: system-ui;
+        font-weight: 600;
     }
     .mx-1
     {
