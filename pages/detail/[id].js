@@ -30,12 +30,8 @@ const SectionDetailStc=Styled.section`
           }
     }
 `;
-export default function Detail({query}) {
-
-    const [lien,setLien]=useState("/img/lamp.png")
-    const id=query?.id;
-
-  console.log(query)
+export default function Detail() {
+    const lien="/img/ecouteur.png"
   return (
     <SectionDetailStc className="sectionDetail" style={{padding:"80px"}}>
         <Row>
@@ -69,7 +65,7 @@ export default function Detail({query}) {
             </Row>
         </Col>
         <Col lg={6}>
-            <h2 style={{fontSize: "25px"}}>yes</h2>
+            <h2 style={{fontSize: "25px"}}>Produit 1</h2>
             <Row style={{paddingBottom:"20px;"}}>
                 <Col sm={12} style={{padding: "15px",borderBottom: "1px solid #ccc"}}>
                 <span style={{fontWeight: "500",float: "left"}}> Prix total</span>
