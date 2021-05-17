@@ -169,13 +169,16 @@ const ContainerStyle=styled(Container)`
 `;
 
 
+
 export default function Home() {
   return (
     <div className="App">
-      <Head>
+      {/*<Head>
         <title>dubani agency</title>
         <link rel="icon" href="/img/favicon.ico" />
-      </Head>
+      </Head>*/}
+
+      <MetaData title={"Home"} description={"Acceuil"} />
 
       <Contner className='contner'>
         <ContainerStyle>
