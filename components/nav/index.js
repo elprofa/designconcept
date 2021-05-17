@@ -48,7 +48,7 @@ const NavBar = (props) => {
                       
                     </Nav>
                     <NavbarText className='mx-1'><Link href='/'><a>Acceuil</a></Link></NavbarText><br/>
-                    <NavbarText className='mx-1'><Link href='/'><a>Catalogue</a></Link></NavbarText><br/>
+                    <NavbarText className='mx-1'><Link href='/categorie'><a>Catalogue</a></Link></NavbarText><br/>
                     <NavbarText className='mx-1'><Link href='/'><a>Contact</a></Link></NavbarText>
                   </Collapse>
                 </Navbar>
