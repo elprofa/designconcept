@@ -1,11 +1,19 @@
 import styled from "styled-components";
 
  const NavBarStc = styled.section`
+
+    .container 
+    {
+        @media (max-width: 476px)         
+        {
+            padding:0px !important;
+        }
+    }
     .sectionHeader
     {
         border-bottom:1px solid #f3f3f3;
         border-bottom: 1px solid #f3f3f3;
-        background: #e6e6e6;
+        background: #fff;
         height: 120px;
     }
     .afterHeader h1
@@ -15,6 +23,12 @@ import styled from "styled-components";
         span
         {
             font-weight:600;
+        }
+
+        @media (max-width: 767px)         
+        {
+            font-size:30px;
+            text-align:center;
         }
     }
     .sectionHeader1

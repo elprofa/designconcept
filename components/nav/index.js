@@ -26,6 +26,7 @@ import NavBarStc from './nav.stc';
 import { button, nav} from "react-bootstrap"
 import PropTypes from "prop-types"
 import Link from "next/link"
+import Image from 'next/image'
 
 const NavBar = (props) => {
       const [isOpen, setIsOpen] = useState(false);
@@ -39,26 +40,17 @@ const NavBar = (props) => {
               <nav>
                 <Navbar className='navbar' light expand="md">
                   <NavbarBrand href="/" style={{paddingTop:"20px"}}>
-                  {/* <StaticImage className= 'img' id= 'img'
-                    src="../../images/logo.png"
-                    height={80}
-                    quality={95}
-                    formats={["AUTO", "WEBP", "AVIF"]}
-                    alt="A Gatsby astronaut"
-                    style={{ marginBottom: `1.45rem`,
-                            cursor: `pointer` }}
-                  /> */}
-                  <img src="/img/LogoDesignKoncep.png" alt="Logo" />                  </NavbarBrand>
+                    <Image src="/img/logo.png" width="120" height="80px" />
+                  </NavbarBrand>
                   <NavbarToggler onClick={toggle} />
                   <Collapse isOpen={isOpen} navbar>
-                    <Nav className="mr-auto" navbar>
-                      
-                      
+                  <Nav className="mr-auto" navbar>
                       
                     </Nav>
-                    <NavLink className='mx-1 navlink'>Acceuil</NavLink><br/>
-                    <NavLink className='mx-1 navlink'>Catalogue</NavLink><br/>
-                    <NavLink className='mx-1 navlink'>Contact</NavLink>
+                    <NavbarText className='mx-1'><Link href='/'><a>Acceuil</a></Link></NavbarText><br/>
+                    <NavbarText className='mx-1'><Link href='/categorie'><a>Catalogue</a></Link></NavbarText><br/>
+                    <NavbarText className='mx-1'><Link href='/'><a>Contact</a></Link></NavbarText>
+
                   </Collapse>
                 </Navbar>
                 </nav>
