@@ -16,25 +16,51 @@ const ContainerStyle=styled(Container)`
  .ranger-1
  {
    background: #42210b;
+   .divButton 
+   {
+    background-image:url("/img/home1.png");
+    background-size:100% 100%;
+   }
  }
 
  .ranger-2
  {
    background: #f7931e;
+   .divButton 
+   {
+    background-image:url("/img/lamp1.png");
+    background-size:100% 100%;
+   }
  }
 
  .ranger-3
  {
    background: #c1272d;
+   .divButton 
+   {
+    background-image:url("/img/electro1.png");
+    background-size:100% 100%;
+   }
  }
 
  .ranger-4
  {
    background: #f15a24;
+   .divButton 
+   {
+    background-image:url("/img/gadget1.png");
+    background-size:100% 100%;
+   }
  }
  
  .column {
+
     height: 100vh;
+    @media (max-width: 963px)         
+    {
+      display: block !important;
+      flex: none !important;
+    }
     .appercu
     {
       display:none;
@@ -63,15 +89,33 @@ const ContainerStyle=styled(Container)`
   margin: 0;
   height: 100vh !important;
 }
+
+.divButton:hover{
+  @media (min-width: 963px)         
+    {
+      transform: rotate(45deg);
+    }
+  
+}
+
 .divButton {
-    position: relative;
-    margin-top: 70% !important;
+  
+  position: relative;
+  margin-top: 70% !important;
+    @media (min-width: 964px)         
+    {
+      transition: transform .7s ease-in-out;
+    }
+    @media (max-width: 963px)         
+    {
+      margin-top: 30% !important;
+    }
     text-align: center;
-    border: 45px solid #fff;
-    width: 215px;
+    width: 200px;
     margin: auto;
-    height: 210px;
+    height: 200px;
     padding-top: 20px;
+    
     cursor:pointer;
     color: #fff;
       font-family: system-ui;
@@ -91,7 +135,8 @@ const ContainerStyle=styled(Container)`
           max-width: 80% !important;
           display: block;
           margin: 0px auto !important;
-          height: 350px;
+         
+          height: 350px ;
           width: auto !important;
           img{
             visibility: inherit;
@@ -103,11 +148,17 @@ const ContainerStyle=styled(Container)`
             margin: auto;
             display: block;
             width: auto;
-            height: 350px important;
-            min-width: 0 important;
-            max-width: 100% important;
-            min-height: 0 important;
-            max-height: 100% important;
+            @media (min-width: 477px)         
+            {
+              height: 350px !important;
+            }
+            
+            max-width: 100% !important;
+            max-height: 100% !important;
+            @media (max-width: 963px)         
+            {
+              min-height: 50% !important;
+            }
           }
       }
     }
@@ -116,10 +167,14 @@ const ContainerStyle=styled(Container)`
   {
     width: 100px;
     height: 100px;
-    border: 20px solid #fff;
+    /* border: 20px solid #fff; */
     padding: 0;
     font-size: 12px;
     padding-top: 10px;
+    @media (max-width: 476px)         
+    {
+      margin-top: 100% !important;
+    }
   }
 }
 `;
@@ -187,10 +242,9 @@ export default function Home() {
                 </div>
                 
               </div>
-              <div className="divButton" id="1" onClick={clickColumn}>
-                  <AiOutlineHome /> <br/>
-                      HOME
-                </div>
+              <div className="divButton "  id="1" onClick={clickColumn}>
+                  
+              </div>
             </Col>
 
             <Col className='ranger-2 column'  id="column2">
@@ -202,9 +256,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="divButton" id="2" onClick={clickColumn}>
-                      <AiOutlineBulb /> <br/>
-                      LAMPE
-                </div>
+              </div>
             </Col>    
 
           <Col className='ranger-3 column'  id="column3">
@@ -216,9 +268,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="divButton" id="3" onClick={clickColumn}>
-                      <AiOutlineClear /> <br/>
-                      MENAGE
-                </div>
+              </div>
           </Col>
 
           <Col className='ranger-4 column'  id="column4">
@@ -230,8 +280,6 @@ export default function Home() {
               </div>
             </div>
             <div className="divButton" id="4" onClick={clickColumn}>
-                  <AiOutlineLaptop /> <br/>
-                  GADGET
             </div>
           </Col>
       </Row>

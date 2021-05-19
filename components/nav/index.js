@@ -59,8 +59,9 @@ const NavBar = (props) => {
               <Container>
           
                 <Row className="afterHeader">
-                  <Col lg={12}>
-                    <h1>D<span >esign</span>et<span>ko</span>ncept</h1>
+                  <Col lg={12} >
+                    <Image src='/img/designetkoncept.png' width="auto" height="70" />
+                    {/* <h1>D<span >esign</span>et<span>ko</span>ncept</h1> */}
                   </Col>
                 </Row>
               </Container>

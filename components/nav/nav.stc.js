@@ -35,9 +35,9 @@ import styled from "styled-components";
     }
     .sectionHeader1
     {
-        padding: 0px 20px;
+        padding: 20px;
         background: #000;
-        padding-bottom: 15px;
+        padding-bottom: 10px;
     }
     .navbar
     {
@@ -64,6 +64,23 @@ import styled from "styled-components";
     .mx-1
     {
         margin-right:20px !important;
+    }
+    .afterHeader.row img
+    {
+        @media (max-width: 963px)         
+        {
+            min-height: 25px !important;
+        }
+        
+    }
+
+    .afterHeader.row div {
+        width: 50% !important;
+        @media (max-width: 963px)         
+        {
+            width: 200px !important;
+        }
+       
     }
 `;
 export default NavBarStc;
