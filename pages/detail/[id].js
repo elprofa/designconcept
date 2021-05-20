@@ -8,6 +8,52 @@ const SectionDetailStc=Styled.section`
  
      min-height:100vh;
     background:#fff !important;
+    .caption 
+  {
+    transition:3s;
+    display:block;
+    opacity:1;
+    z-index: 9;
+    position: relative;
+    margin-bottom: 20px;
+    background: #fff;
+    width: 50%;
+    background: #46230b !important;
+    color: #fff;
+    padding: 30px;
+    border-radius: 100px 0px;
+    margin: 25px;
+    left: 0px;
+  }
+  .move{
+  -webkit-animation: moveall 5s;
+  animation: moveall 5s;
+}
+.move-ltr{
+   -webkit-animation: moveltr 5s;
+  animation: moveltr 5s;
+}
+.move-ttb{
+    -webkit-animation: movettb 5s;
+  animation: movettb 5s;
+}
+@keyframes moveall {
+  0%   {left: 0px; top: 0px;}
+  25%  {left: 200px; top: 0px;}
+  50%  {left: 200px; top: 200px;}
+  75%  {left: 0px; top: 200px;}
+  100% {left: 0px; top: 0px;}
+}
+@keyframes moveltr {
+  0%   { left: 0px; top: 0px;}
+  50%  {left: 200px; top: 0px;}
+  100% {left: 0px; top: 0px;}
+}
+@keyframes movettb {
+  0%   {left: 0px; top: 0px;}
+  50%  {top: 200px;left: 0px;}
+  100% {left: 0px; top: 0px;}
+}
     .imagaAppercu div {
         width: 90%;
         height: 411px;
@@ -31,12 +77,24 @@ const SectionDetailStc=Styled.section`
     }
 `;
 export default function Detail() {
+    const ltr=()=>{
+       
+        var caption = document.getElementsByClassName('caption');
+        console.log(caption[0],caption[0].classList)
+        caption[0].classList.remove("move");
+        caption[0].classList.remove("move-ttb");
+        caption[0].classList.toggle("move-ltr");
+    }
     const lien="/img/ecouteur.png"
   return (
     <SectionDetailStc className="sectionDetail" style={{padding:"80px"}}>
         <Row>
             <Col lg={6}>
-                <div className="imagaAppercu">
+                <div className="caption">
+                  <h1>MEMORY FOAM</h1>
+                  <p>Portable et pliable</p>
+                </div>
+                <div className="imagaAppercu" onClick={ltr}> 
                     <Image src={lien} layout="fill" />
                 </div>
             <br/>

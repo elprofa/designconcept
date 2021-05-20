@@ -124,8 +124,43 @@ const ContainerStyle=styled(Container)`
     
 }
 
+.caption,.caption1
+{
+  display:none;
+}
+
+  .move{
+  -webkit-animation: moveall 5s;
+  animation: moveall 5s;
+}
+.move-ltr{
+   -webkit-animation: moveltr 5s;
+  animation: moveltr 5s;
+}
+.move-ttb{
+    -webkit-animation: movettb 5s;
+  animation: movettb 5s;
+}
+@keyframes moveall {
+  0%   {left: 0px; top: 0px;}
+  25%  {left: 200px; top: 0px;}
+  50%  {left: 200px; top: 200px;}
+  75%  {left: 0px; top: 200px;}
+  100% {left: 0px; top: 0px;}
+}
+@keyframes moveltr {
+  0%   { left: 0px; top: 0px;}
+  50%  {left: 200px; top: 0px;}
+  100% {left: 0px; top: 0px;}
+}
+@keyframes movettb {
+  0%   {left: 0px; top: 0px;}
+  50%  {top: 200px;left: 0px;}
+  100% {left: 0px; top: 0px;}
+}
 .mystyle
 {
+  background:#fff !important;
   flex:3;
   .appercu
     {
@@ -136,8 +171,10 @@ const ContainerStyle=styled(Container)`
           display: block;
           margin: 0px auto !important;
          
-          height: 350px ;
+          height: 400px ;
           width: auto !important;
+          padding:50px 0px;
+              margin-top: 40px !important;
           img{
             visibility: inherit;
             position: relative !important;
@@ -147,10 +184,11 @@ const ContainerStyle=styled(Container)`
             border: none;
             margin: auto;
             display: block;
+            margin-top: 40px !important;
             width: auto;
             @media (min-width: 477px)         
             {
-              height: 350px !important;
+              height: 300px !important;
             }
             
             max-width: 100% !important;
@@ -165,22 +203,84 @@ const ContainerStyle=styled(Container)`
 
   .divButton
   {
+    box-shadow:0px 6px 6px #ccc;
     width: 100px;
     height: 100px;
     /* border: 20px solid #fff; */
     padding: 0;
     font-size: 12px;
     padding-top: 10px;
+    margin-top: 55% !important;
     @media (max-width: 476px)         
     {
       margin-top: 100% !important;
     }
   }
+  .caption1
+  {
+    display:block;
+    position: absolute;
+    z-index: 9;
+    width: 100px;
+    background: #46230b;
+    color: #fff;
+    top: 20px;
+    right: 20px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 50% 0;
+    h1
+    {
+      text-align: center;
+      font-size: 28px;
+      font-weight: 600;
+      font-family: system-ui;
+    }
+    p{
+      text-align: center;
+      margin: 15px;
+      font-style: italic;
+      margin-bottom: 0px;
+      font-weight: 100;
+    }
+  }
+  .caption 
+  {
+    transition:3s;
+    display:block;
+    opacity:1;
+    z-index: 9;
+    position: relative;
+    margin-bottom: 20px;
+    width: 300px;
+    background: transparent !important;
+    color: #46230b;
+    padding: 0px;
+    border-radius: 100px 0px;
+    margin: 25px;
+    left: 0px;
+    h1
+    {
+      font-weight: 700;
+      font-family: system-ui;
+    }
+    p
+    {
+      border-bottom: 1px solid;
+    }
+  }
+ 
 }
 `;
 
 
 export default function Home() {
+
+  const ltr=()=>{
+    var caption = document.getElementsByClassName('caption')[0];
+    caption.classList.remove("move-ltr");
+    caption.classList.toggle("move-ltr");
+}
 
   const clickColumn=(e)=>{
   
@@ -188,7 +288,8 @@ export default function Home() {
     console.log(id);
     var priam =document.getElementById("column"+id);
     var elements = document.getElementsByClassName('mystyle')
-    
+   
+
     console.log(priam)
     console.log(elements)
     
@@ -215,11 +316,8 @@ export default function Home() {
         priam.style.transition = ".9s";
         priam.classList.add('mystyle')
       }
-      
-    console.log(priam.classList)
-
       // console.log(e.target.classList);
-
+      ltr();
       console.log(priam.classList)
   }
 
@@ -235,15 +333,24 @@ export default function Home() {
           <Row >
             <Col  className='ranger-1 column' id="column1">
               <div className="appercu">
+              <div className="caption">
+                  <h1>MEMORY FOAM</h1>
+                  <p>Portable et pliable</p>
+              </div>
+              <div className="caption1">
+                  <p>CFA </p>
+                  <h1>320 k</h1>
+              </div>
                 <div className="productImage">
                   <Link href="/detail/1">
-                    <Image src="/img/f1.png" layout="fill" />
+                    <Image src="/img/canape.gif" layout="fill" />
                   </Link>
                 </div>
                 
               </div>
+              
               <div className="divButton "  id="1" onClick={clickColumn}>
-                  
+              
               </div>
             </Col>
 
