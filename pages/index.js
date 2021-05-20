@@ -174,7 +174,7 @@ const ContainerStyle=styled(Container)`
           height: 400px ;
           width: auto !important;
           padding:50px 0px;
-              margin-top: 40px !important;
+          margin-top: 80px !important;
           img{
             visibility: inherit;
             position: relative !important;
