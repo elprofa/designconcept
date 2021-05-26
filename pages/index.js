@@ -124,16 +124,16 @@ const ContainerStyle=styled(Container)`
 }
 
   .move{
-  -webkit-animation: moveall 5s;
-  animation: moveall 5s;
+  -webkit-animation: moveall 2s;
+  animation: moveall 2s;
 }
 .move-ltr{
-   -webkit-animation: moveltr 5s;
-  animation: moveltr 5s;
+   -webkit-animation: moveltr 2s;
+  animation: moveltr 2s;
 }
 .move-ttb{
-    -webkit-animation: movettb 5s;
-  animation: movettb 5s;
+    -webkit-animation: movettb 2s;
+  animation: movettb 2s;
 }
 @keyframes moveall {
   0%   {left: 0px; top: 0px;}
@@ -154,7 +154,7 @@ const ContainerStyle=styled(Container)`
 }
 .mystyle
 {
-  background:#fff !important;
+  background:#fbfbfb !important;
   flex:3;
   .appercu
     {
@@ -171,7 +171,7 @@ const ContainerStyle=styled(Container)`
             display: block;
             margin-top: 40px !important;
             width: auto;
-            max-height: 300px;
+            max-height: 400px;
             max-width: 100%;
             margin: auto;
             display: block;
@@ -238,6 +238,10 @@ const ContainerStyle=styled(Container)`
     {
       font-weight: 700;
       font-family: system-ui;
+      @media (max-width: 467px)         
+      {
+        font-size: 28px;
+      }
     }
     p
     {
