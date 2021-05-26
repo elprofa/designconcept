@@ -40,7 +40,7 @@ const NavBar = (props) => {
               <nav>
                 <Navbar className='navbar' light expand="md">
                   <NavbarBrand href="/" style={{paddingTop:"20px"}}>
-                    <Image src="/img/logo.png" width="190" height="140px" />
+                    <img src="/img/logo.png" width="190" height="140px" />
                   </NavbarBrand>
                   <NavbarToggler onClick={toggle} />
                   <Collapse isOpen={isOpen} navbar>
@@ -60,8 +60,7 @@ const NavBar = (props) => {
           
                 <Row className="afterHeader">
                   <Col lg={12} >
-                    <Image src='/img/designetkoncept.png' width="auto" height="70" />
-                    {/* <h1>D<span >esign</span>et<span>ko</span>ncept</h1> */}
+                    <img src='/img/designetkoncept.png' height="70" />
                   </Col>
                 </Row>
               </Container>

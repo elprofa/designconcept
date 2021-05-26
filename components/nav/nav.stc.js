@@ -69,7 +69,7 @@ import styled from "styled-components";
     {
         @media (max-width: 963px)         
         {
-            min-height: 25px !important;
+            height: 25px !important;
         }
         
     }
