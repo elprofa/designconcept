@@ -54,8 +54,7 @@ const ContainerStyle=styled(Container)`
  }
  
  .column {
-
-    height: 100vh;
+   padding-bottom: 40px;
     @media (max-width: 963px)         
     {
       display: block !important;
@@ -101,21 +100,16 @@ const ContainerStyle=styled(Container)`
 .divButton {
   
   position: relative;
-  margin-top: 70% !important;
     @media (min-width: 964px)         
     {
       transition: transform .7s ease-in-out;
     }
-    @media (max-width: 963px)         
-    {
-      margin-top: 30% !important;
-    }
-    text-align: center;
-    width: 200px;
-    margin: auto;
-    height: 200px;
-    padding-top: 20px;
     
+    text-align: center;
+    width: 170px;
+    height: 170px;
+    padding-top: 20px;
+    margin: 30vh auto !important;
     cursor:pointer;
     color: #fff;
       font-family: system-ui;
@@ -165,17 +159,8 @@ const ContainerStyle=styled(Container)`
   .appercu
     {
       display:block;
-      .productImage div {
-        cursor:pointer;
-          max-width: 80% !important;
-          display: block;
-          margin: 0px auto !important;
-         
-          height: 400px ;
-          width: auto !important;
-          padding:50px 0px;
-          margin-top: 80px !important;
-          img{
+      img{
+            transition-delay: 2s;
             visibility: inherit;
             position: relative !important;
             inset: 0px;
@@ -186,19 +171,12 @@ const ContainerStyle=styled(Container)`
             display: block;
             margin-top: 40px !important;
             width: auto;
-            @media (min-width: 477px)         
-            {
-              height: 300px !important;
-            }
+            max-height: 300px;
+            max-width: 100%;
+            margin: auto;
+            display: block;
             
-            max-width: 100% !important;
-            max-height: 100% !important;
-            @media (max-width: 963px)         
-            {
-              min-height: 50% !important;
-            }
           }
-      }
     }
 
   .divButton
@@ -210,11 +188,8 @@ const ContainerStyle=styled(Container)`
     padding: 0;
     font-size: 12px;
     padding-top: 10px;
-    margin-top: 55% !important;
-    @media (max-width: 476px)         
-    {
-      margin-top: 100% !important;
-    }
+    margin: 10% auto !important;
+    
   }
   .caption1
   {
@@ -252,7 +227,7 @@ const ContainerStyle=styled(Container)`
     z-index: 9;
     position: relative;
     margin-bottom: 20px;
-    width: 300px;
+    width: 50%;
     background: transparent !important;
     color: #46230b;
     padding: 0px;
@@ -277,9 +252,21 @@ const ContainerStyle=styled(Container)`
 export default function Home() {
 
   const ltr=()=>{
-    var caption = document.getElementsByClassName('caption')[0];
-    caption.classList.remove("move-ltr");
-    caption.classList.toggle("move-ltr");
+    var caption1 = document.getElementsByClassName('captionK1')[0];
+    var caption2 = document.getElementsByClassName('captionK2')[0];
+    var caption3 = document.getElementsByClassName('captionK3')[0];
+    var caption4 = document.getElementsByClassName('captionK4')[0];
+    caption1.classList.remove("move-ltr");
+    caption1.classList.toggle("move-ltr");
+
+    caption2.classList.remove("move-ltr");
+    caption2.classList.toggle("move-ltr");
+
+    caption3.classList.remove("move-ltr");
+    caption3.classList.toggle("move-ltr");
+
+    caption4.classList.remove("move-ltr");
+    caption4.classList.toggle("move-ltr");
 }
 
   const clickColumn=(e)=>{
@@ -333,7 +320,7 @@ export default function Home() {
           <Row >
             <Col  className='ranger-1 column' id="column1">
               <div className="appercu">
-              <div className="caption">
+              <div className="caption captionK1">
                   <h1>MEMORY FOAM</h1>
                   <p>Portable et pliable</p>
               </div>
@@ -343,7 +330,7 @@ export default function Home() {
               </div>
                 <div className="productImage">
                   <Link href="/detail/1">
-                    <Image src="/img/canape.gif" layout="fill" />
+                    <img src="/img/canape.gif" style={{width:"75% !important"}} />
                   </Link>
                 </div>
                 
@@ -356,9 +343,17 @@ export default function Home() {
 
             <Col className='ranger-2 column'  id="column2">
               <div className="appercu">
+              <div className="caption captionK2">
+                  <h1>OFFICE LAMP</h1>
+                  <p>Haute qualité & cool</p>
+              </div>
+              <div className="caption1">
+                  <p>CFA </p>
+                  <h1>50 k</h1>
+              </div>
                 <div className="productImage">
                 <Link href="/detail/1">
-                  <Image src="/img/lamp.png" layout="fill" />
+                    <img src="/img/lamp.gif"  />
                   </Link>
                 </div>
               </div>
@@ -368,10 +363,18 @@ export default function Home() {
 
           <Col className='ranger-3 column'  id="column3">
             <div className="appercu">
+            <div className="caption captionK3">
+                  <h1>MIXER AMERICAIN</h1>
+                  <p>Puissant et endurant </p>
+              </div>
+              <div className="caption1">
+                  <p>CFA </p>
+                  <h1>120 k</h1>
+              </div>
                 <div className="productImage">
                 <Link href="/detail/1">
-                  <Image src="/img/electro.png" layout="fill" />
-                  </Link>
+                    <img src="/img/mixer.gif"  />
+                </Link>
                 </div>
               </div>
               <div className="divButton" id="3" onClick={clickColumn}>
@@ -380,9 +383,17 @@ export default function Home() {
 
           <Col className='ranger-4 column'  id="column4">
             <div className="appercu">
+              <div className="caption captionK4">
+                    <h1>Earphone bling</h1>
+                    <p>Doux et aggréable à l'oreille </p>
+                </div>
+                <div className="caption1">
+                    <p>CFA </p>
+                    <h1>44 k</h1>
+                </div>
               <div className="productImage">
-              <Link href="/detail/1">
-                <Image src="/img/ecouteur.png" layout="fill" />
+                <Link href="/detail/1">
+                  <img src="/img/gadget_2.gif"  />
                 </Link>
               </div>
             </div>
