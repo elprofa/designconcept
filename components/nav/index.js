@@ -40,7 +40,7 @@ const NavBar = (props) => {
               <nav>
                 <Navbar className='navbar' light expand="md">
                   <NavbarBrand href="/" style={{paddingTop:"20px"}}>
-                    <img src="/img/logo.png" width="190" height="140px" />
+                    <img src="/img/logodko.png"  height="90" />
                   </NavbarBrand>
                   <NavbarToggler onClick={toggle} />
                   <Collapse isOpen={isOpen} navbar>

@@ -14,7 +14,7 @@ import styled from "styled-components";
         border-bottom:1px solid #f3f3f3;
         border-bottom: 1px solid #f3f3f3;
         background: #fff;
-        height: 175px;
+        height: 140px;
     }
     .afterHeader h1
     {
